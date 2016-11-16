@@ -1,0 +1,14 @@
+<div class="container">
+  <h1>Anonymous Blog Entries</h1>
+
+  <form action='/entries/new' method="get">
+    <button class="center btn waves-effect waves-light blue lighten-4" type="submit" name="action">Add New Blog Post
+    </button>
+  </form>
+
+  <!-- <h2><a class="hoverable" href="/tags">View entries by tags</a></h2> -->
+
+  <% @entries.each do |entry| %>
+      <p class="hoverable card-panel blue lighten-5"><a class="text-dec-none" href="entries/<%=entry.id%>"><%= entry.title %></a></p>
+  <% end %>
+</div>

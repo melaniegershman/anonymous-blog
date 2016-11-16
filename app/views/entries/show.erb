@@ -1,0 +1,30 @@
+<h1><%=@entry.title%></h1>
+
+<p><%=@entry.body%></p>
+
+<% if @entry.tags.any? %>
+  <h4>Tags:</h4>
+  <% @entry.tags.each do |tag| %>
+    <!-- <ul class="list-dec-none"> -->
+      <p id="tag"> <a class="text-dec-none" href="/tags/<%=@entry.id%>"><%=tag.tag%></a> </p>
+    <!-- </ul> -->
+  <% end %>
+<% else %>
+  <p>This post has no tags!</p>
+<% end %>
+
+<!-- form to create new tag-->
+<form action='/entries/<%=@entry.id%>/entry_tags' method="post">
+<label>Put your tags in here, separated by a comma</label></br>
+  <input type="text" name="tags">
+  <input type="submit" value="Add tag">
+</form>
+<!-- form to edit entry -->
+<form action='/entries/<%=@entry.id%>/edit' method="get">
+  <input type="submit" value="Edit this entry!">
+</form>
+<!-- form to delete entry -->
+<form action="/entries/<%=@entry.id%>" method="post">
+  <input type="hidden" name="_method" value="DELETE">
+  <input type="submit" value="Delete Article?">
+</form>
