@@ -1,0 +1,8 @@
+<div class="container">
+  <h1>Tag Names</h1>
+  <% @tags.each do |tag| %>
+    <!-- <ul class="list-dec-none"> -->
+      <p id="tag"><a class="hoverable text-dec-none" href="tags/<%=tag.id%>"><%= tag.tag %></a></p>
+    <!-- </ul> -->
+  <% end %>
+</div>

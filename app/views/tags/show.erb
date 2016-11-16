@@ -1,0 +1,5 @@
+<div>
+  <% @tag.entries.each do |entry| %>
+    <p id="tag"><a class="hoverable text-dec-none" href="/entries/<%=entry.id%>"><%=entry.title%></a></p>
+  <% end %>
+</div>

@@ -1,0 +1,9 @@
+<form id="entry-form" action="/entries/<%=@entry.id%>" method="post">
+  <input type="hidden" name="_method" value="put">
+  <label for="title">Blog title:</label>
+    <input type="text" name="entry[title]">
+  <label for="body">Blog text:</label>
+    <input type="text" name="entry[body]">
+  <input type="submit" value="Submit edits!">
+</form>
+
